@@ -16,28 +16,28 @@ Plug 'chriszarate/yazi.vim'
 - `YaziCurrentDirectory` opens `yazi` with the current directory highlighted
 - `YaziWorkingDirectory` opens `yazi` with the working directory highlighted
 
-By default, `Yazi` is called instead of `netrw` when opening a directory in `vim`.
+The chosen file(s) will be opened as new buffers (`edit`). By default, `Yazi` is called instead of `netrw` when opening a directory in `vim`.
 
 ## Maps
 
 Maps I like:
 
-```
+```vim
 nnoremap <silent> - :Yazi<cr>
 nnoremap <silent> _ :YaziWorkingDirectory<cr>
 ```
 
 ## Configuration
 
-```
-const g:yazi_command = 'yazi --with-args'
-const g:yazi_exec_on_open = 'tabnew'
+```vim
+const g:yazi_command = 'yazi --with-args' " default 'yazi'
+const g:yazi_exec_on_open = 'tabnew'      " default 'edit'
 ```
 
 ## Splits
 
-Either split before calling `Yazi` or create a map that splits before calling `Yazi`:
+Either create your desired split before calling `Yazi` or create a map that splits _and_ calls `Yazi`:
 
-```
+```vim
 nnoremap <silent> <C-v> :vsplit \| :Yazi<cr>
 ```
