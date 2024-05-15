@@ -18,8 +18,26 @@ Plug 'chriszarate/yazi.vim'
 
 By default, `Yazi` is called instead of `netrw` when opening a directory in `vim`.
 
-### Setting a custom command
+## Maps
+
+Maps I like:
 
 ```
-let g:yazi_command_override = 'yazi --with-args'
+nnoremap <silent> - :Yazi<cr>
+nnoremap <silent> _ :YaziWorkingDirectory<cr>
+```
+
+## Configuration
+
+```
+const g:yazi_command = 'yazi --with-args'
+const g:yazi_exec_on_open = 'tabnew'
+```
+
+## Splits
+
+Either split before calling `Yazi` or create a map that splits before calling `Yazi`:
+
+```
+nnoremap <silent> <C-v> :vsplit \| :Yazi<cr>
 ```
